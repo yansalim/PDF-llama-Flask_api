@@ -15,7 +15,7 @@ This project provides an API to upload PDFs to an Amazon S3 bucket, process them
 
 ## 🛠️ Prerequisites
 
-- **Python 3.9+**
+- **Python 3.12+**
 - **Docker** and **Docker Compose** installed.
 - An AWS S3 bucket and access credentials.
 - The Llama model downloaded or available for automatic download.
