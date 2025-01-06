@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  llama-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT}:${PORT}"
+    volumes:
+      - llama_model_data:/app/Llama-2-7b-hf
+    environment:
+      - MODEL_DIR=${MODEL_DIR}
+      - MODEL_URL=${MODEL_URL}
+      - MAX_BLOCK_SIZE=${MAX_BLOCK_SIZE}
+      - AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
+      - AWS_SECRET_KEY=${AWS_SECRET_KEY}
+      - S3_BUCKET_NAME=${S3_BUCKET_NAME}
+      - S3_REGION=${S3_REGION}
+      - PORT=${PORT}
+    restart: unless-stopped
+
+volumes:
+  llama_model_data:
